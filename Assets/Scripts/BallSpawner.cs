@@ -10,14 +10,25 @@ public class BallSpawner : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
-    if (Input.GetKeyDown(KeyCode.Space)){
+    if (Input.GetKeyDown(KeyCode.LeftArrow)){
       GameObject instance = Instantiate(ballPrefab);
       Rigidbody rb = instance.GetComponent<Rigidbody>();
       rb.velocity = Vector3.left;
-    } else if(Input.GetKeyDown(KeyCode.RightArrow)){
+    }
+    else if(Input.GetKeyDown(KeyCode.RightArrow)){
       GameObject instance = Instantiate(ballPrefab);
       Rigidbody rb = instance.GetComponent<Rigidbody>();
       rb.velocity = Vector3.right;
+    }
+    else if(Input.GetKeyDown(KeyCode.UpArrow)){
+      GameObject instance = Instantiate(ballPrefab);
+      Rigidbody rb = instance.GetComponent<Rigidbody>();
+      rb.velocity = Vector3.forward;
+    }
+    else if(Input.GetKeyDown(KeyCode.DownArrow)){
+      GameObject instance = Instantiate(ballPrefab);
+      Rigidbody rb = instance.GetComponent<Rigidbody>();
+      rb.velocity = Vector3.back;
     }
   }
 }
