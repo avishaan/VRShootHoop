@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BallSpawner : MonoBehaviour {
   public GameObject ballPrefab;
+  public float velocity = 1.0f;
 
   // Use this for initialization
   void Start () {
@@ -13,22 +14,22 @@ public class BallSpawner : MonoBehaviour {
     if (Input.GetKeyDown(KeyCode.LeftArrow)){
       GameObject instance = Instantiate(ballPrefab);
       Rigidbody rb = instance.GetComponent<Rigidbody>();
-      rb.velocity = Vector3.left;
+      rb.velocity = Vector3.left * velocity;
     }
     else if(Input.GetKeyDown(KeyCode.RightArrow)){
       GameObject instance = Instantiate(ballPrefab);
       Rigidbody rb = instance.GetComponent<Rigidbody>();
-      rb.velocity = Vector3.right;
+      rb.velocity = Vector3.left * velocity;
     }
     else if(Input.GetKeyDown(KeyCode.UpArrow)){
       GameObject instance = Instantiate(ballPrefab);
       Rigidbody rb = instance.GetComponent<Rigidbody>();
-      rb.velocity = Vector3.forward;
+      rb.velocity = Vector3.forward * velocity;
     }
     else if(Input.GetKeyDown(KeyCode.DownArrow)){
       GameObject instance = Instantiate(ballPrefab);
       Rigidbody rb = instance.GetComponent<Rigidbody>();
-      rb.velocity = Vector3.back;
+      rb.velocity = Vector3.back * velocity;
     }
   }
 }
