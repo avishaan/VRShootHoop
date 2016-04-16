@@ -13,12 +13,20 @@ public class LevelManager : MonoBehaviour {
   // Update is called once per frame
   void Update () {
     if (Input.GetKeyDown(KeyCode.Space)){
-      LoadNextScene();
+      string currentScene = SceneManager.GetActiveScene().name;
+      switch (currentScene){
+        case "Start Menu":
+          LoadNextScene("Main");
+          break;
+        case "Main":
+          LoadNextScene("End Menu");
+          break;
+      }
     }
   }
 
-  void LoadNextScene() {
+  void LoadNextScene(string sceneName) {
     // Load Scene
-    SceneManager.LoadScene("Main");
+    SceneManager.LoadScene(sceneName);
   }
 }
