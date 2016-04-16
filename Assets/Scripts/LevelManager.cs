@@ -8,8 +8,7 @@ public class LevelManager : MonoBehaviour {
   // Use this for initialization
   void Start () {
     // Load Scene
-    int currentIndex = SceneManager.GetActiveScene().buildIndex;
-    SceneManager.LoadScene(currentIndex + 1);
+    SceneManager.LoadScene("Main");
   }
 
   // Update is called once per frame
