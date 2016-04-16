@@ -21,6 +21,9 @@ public class LevelManager : MonoBehaviour {
         case "Main":
           LoadNextScene("End Menu");
           break;
+        case "End Menu":
+          LoadNextScene("Start Menu");
+          break;
       }
     }
   }
