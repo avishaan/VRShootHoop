@@ -9,4 +9,7 @@ public class ScoreKeeper : MonoBehaviour {
     score = score + pointValue;
     print("your score is: " + score);
   }
+  public int GetScore(){
+    return score;
+  }
 }
