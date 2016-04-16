@@ -5,7 +5,6 @@ public class BallLauncher : MonoBehaviour {
 
   public float ballSpeed = 5.0f;
   public GameObject ballPrefab;
-  public float velocity = 1.0f;
 
   // Use this for initialization
   void Start () {
@@ -18,7 +17,9 @@ public class BallLauncher : MonoBehaviour {
       GameObject instance = Instantiate(ballPrefab);
       instance.transform.position = transform.position;
       Rigidbody rb = instance.GetComponent<Rigidbody>();
-      rb.velocity = Vector3.forward * velocity;
+      // get camera
+      Camera camera = GetComponentInChildren<Camera>();
+      rb.velocity = camera.transform.rotation * Vector3.forward * ballSpeed;
     }
   }
 }
