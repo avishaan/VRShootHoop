@@ -3,8 +3,11 @@ using System.Collections;
 
 public class ScoreKeeper : MonoBehaviour {
 
-  private int score = 0;
+  public int score = 0;
 
+  void Start(){
+    DontDestroyOnLoad(gameObject);
+  }
   public void IncrementScore (int pointValue){
     score = score + pointValue;
     print("your score is: " + score);
